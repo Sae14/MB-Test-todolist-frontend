@@ -1,8 +1,26 @@
 import React from "react";
+import axios from "axios";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { editTodo } from "../feature/todoSlice";
 
 const Todo = ({ todo }) => {
+  const dispatch = useDispatch();
+
+  const handleChange = () => {
+    const data = {
+      state: !todo.state,
+    };
+
+    axios
+      .put(`${process.env.REACT_APP_PORT}/api/todos/${todo.id}`, data)
+      .then((res) => {
+        dispatch(editTodo({ state: !todo.state, id: todo.id }));
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="shadow-md bg-grey my-5 rounded-xl p-2 flex flex-wrap justify-between md:mx-auto md:w-3/5 lg:w-2/4 xl:w-2/6">
       <h3
@@ -25,6 +43,7 @@ const Todo = ({ todo }) => {
             className="flex cursor-pointer"
             type="checkbox"
             checked={todo.state}
+            onChange={() => handleChange()}
           />
         </label>
       </div>

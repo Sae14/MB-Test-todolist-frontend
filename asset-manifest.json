@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/MB-Test-todolist-frontend/static/css/main.5bde41c1.css",
-    "main.js": "/MB-Test-todolist-frontend/static/js/main.6b92e902.js",
-    "static/js/787.aba4ad27.chunk.js": "/MB-Test-todolist-frontend/static/js/787.aba4ad27.chunk.js",
+    "main.js": "/MB-Test-todolist-frontend/static/js/main.8bd6bf06.js",
+    "static/js/787.cda612ba.chunk.js": "/MB-Test-todolist-frontend/static/js/787.cda612ba.chunk.js",
     "static/media/Nunito-Regular.ttf": "/MB-Test-todolist-frontend/static/media/Nunito-Regular.bedc35fb703c0b2d1fd5.ttf",
     "static/media/wapplogo.PNG": "/MB-Test-todolist-frontend/static/media/wapplogo.5b8b04641a9f7c2352ec.PNG",
     "index.html": "/MB-Test-todolist-frontend/index.html",
     "main.5bde41c1.css.map": "/MB-Test-todolist-frontend/static/css/main.5bde41c1.css.map",
-    "main.6b92e902.js.map": "/MB-Test-todolist-frontend/static/js/main.6b92e902.js.map",
-    "787.aba4ad27.chunk.js.map": "/MB-Test-todolist-frontend/static/js/787.aba4ad27.chunk.js.map"
+    "main.8bd6bf06.js.map": "/MB-Test-todolist-frontend/static/js/main.8bd6bf06.js.map",
+    "787.cda612ba.chunk.js.map": "/MB-Test-todolist-frontend/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5bde41c1.css",
-    "static/js/main.6b92e902.js"
+    "static/js/main.8bd6bf06.js"
   ]
 }

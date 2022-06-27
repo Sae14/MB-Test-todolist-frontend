@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { dateFormater } from "../components/Utils";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams, useNavigate, NavLink } from "react-router-dom";
 import Header from "../components/Header";
 import Navigation from "../components/Navigation";
 
 const Details = () => {
   const { id } = useParams();
   const [todoData, setTodoData] = useState([]);
+  const navigate = useNavigate();
 
   const getDetailData = () => {
     axios
@@ -21,6 +22,12 @@ const Details = () => {
   useEffect(() => {
     getDetailData();
   }, []);
+
+  const handleDelete = () => {
+    axios.delete(`${process.env.REACT_APP_PORT}/api/todos/${id}`).then(() => {
+      navigate("/MB-Test-todolist-frontend/");
+    });
+  };
 
   return (
     <div className="m-2">
@@ -54,7 +61,16 @@ const Details = () => {
             </button>
           </NavLink>
 
-          <button>Delete</button>
+          <button
+            className="bg-green p-2 rounded-full w-16 border-2 border-greenaction hover:bg-greenaction hover:border-green"
+            onClick={() => {
+              if (window.confirm("Do you really want to delete your task ?")) {
+                handleDelete();
+              }
+            }}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

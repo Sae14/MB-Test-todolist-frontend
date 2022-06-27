@@ -5,9 +5,22 @@ export const todoSlice = createSlice({
   initialState: {
     todos: null,
   },
-  reducers: {},
+  reducers: {
+    setTodosData: (state, { payload }) => {
+      state.todos = payload
+        .sort(
+          (a, b) =>
+            new Date(a.updatedAt).valueOf() - new Date(b.updatedAt).valueOf()
+        )
+        .sort(
+          (a, b) =>
+            new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf()
+        )
+        .sort((a, b) => a.state - b.state);
+    },
+  },
 });
 
-export const {} = todoSlice.actions;
+export const { setTodosData } = todoSlice.actions;
 
 export default todoSlice.reducer;

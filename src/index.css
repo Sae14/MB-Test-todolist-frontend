@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    font-family: "Nunito";
+  }
+  ::selection {
+    background-color: #9AE17B;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style-type: none;
+    cursor: pointer;
+  }
+  .nav-active {
+    font-weight: bold;
+  }
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url(../public/font/Nunito-Regular.ttf);
+}
